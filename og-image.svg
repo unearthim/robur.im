@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1a1a1a"/>
+
+  <!-- Simple Bonsai Tree Silhouette -->
+  <g transform="translate(600, 550) scale(2.5)">
+    <!-- Trunk -->
+    <path d="M 0,0 C -10,-50 -50,-80 -40,-120" stroke="#3e2723" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <!-- Branches -->
+    <path d="M -40,-120 C -80,-140 -120,-130 -140,-150" stroke="#3e2723" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M -40,-120 C 0,-150 40,-160 60,-140" stroke="#3e2723" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M 60,-140 C 80,-180 40,-200 20,-190" stroke="#3e2723" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Text -->
+  <text x="600" y="150" font-family="Segoe UI, sans-serif" font-size="72" fill="#ececec" text-anchor="middle" font-weight="300" letter-spacing="2">Living Zen Monument</text>
+  <text x="600" y="210" font-family="monospace" font-size="28" fill="#a8c0ce" text-anchor="middle">robur.im</text>
+
+  <!-- Ground -->
+  <path d="M 0 550 Q 600 490 1200 550 L 1200 630 L 0 630 Z" fill="#2e7d32" />
+</svg>
