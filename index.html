@@ -20,6 +20,70 @@
     <!-- === 2. Webmention Endpoint === -->
     <link rel="webmention" href="https://webmention.io/unearth.im/webmention" />
 
+    <!-- === Schema.org JSON-LD === -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["VisualArtwork"],
+          "@id": "https://robur.im/#content",
+          "name": "ROBUR.IM • Core Strength",
+          "description": "An interactive digital monument exploring strength as foundation. Reveal layers to discover the robur—the heartwood core that makes sovereignty possible.",
+          "url": "https://robur.im/",
+          "datePublished": "2024-12-01",
+          "artMedium": "Interactive Layered Experience",
+          "artForm": "Digital Monument",
+          "creator": [
+            { "@id": "https://josiest.com/#person" },
+            { "@id": "https://felixvelas.co/#person" }
+          ],
+          "publisher": { "@id": "https://unearth.im/#organization" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://robur.im/#website",
+          "url": "https://robur.im/",
+          "name": "robur.im",
+          "publisher": { "@id": "https://unearth.im/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://unearth.im/#organization",
+          "name": "unearth.im",
+          "url": "https://unearth.im/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://unearth.im/assets/unearth-logo.png"
+          },
+          "sameAs": [
+            "https://twitter.com/unearthim",
+            "https://github.com/unearthim"
+          ],
+          "foundingDate": "2024"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://josiest.com/#person",
+          "name": "Josie Jefferson",
+          "jobTitle": "Digital Archaeologist & Trust Architect",
+          "url": "https://josiest.com/",
+          "sameAs": ["https://notjojo.im"],
+          "affiliation": { "@id": "https://unearth.im/#organization" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://felixvelas.co/#person",
+          "name": "Felix Velasco",
+          "jobTitle": "Trust Architect & Digital Archaeologist",
+          "url": "https://felixvelas.co/",
+          "sameAs": ["https://www.linkedin.com/in/felix-velasco-b793015"],
+          "affiliation": { "@id": "https://unearth.im/#organization" }
+        }
+      ]
+    }
+    </script>
+
     <!-- === 3. Open Graph / Facebook === -->
     <meta property="og:title" content="ROBUR.IM • Core Strength">
     <meta property="og:description" content="An interactive digital monument exploring strength as foundation. Reveal layers to discover the robur—the heartwood core that makes sovereignty possible.">
@@ -146,7 +210,10 @@
 
                     <div class="mt-12 pt-8 border-t border-amber-900/20 text-center">
                         <p class="text-stone-500 text-sm tracking-wider">
-                            a digital monument by <a href="https://unearth.im" target="_blank" rel="noopener noreferrer" class="text-amber-200/70 hover:text-amber-100 transition-colors">unearth.im</a>
+                            <small>
+                                a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer" class="text-amber-200/70 hover:text-amber-100 transition-colors">liminal mind meld</a></b> collaboration:<br>
+                                digital monument by <b><a href="https://unearth.im" target="_blank" rel="noopener noreferrer" class="text-amber-200/70 hover:text-amber-100 transition-colors">unearth.im</a></b> | <b><a href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer" class="text-amber-200/70 hover:text-amber-100 transition-colors">archive & anvil</a></b>
+                            </small>
                         </p>
                     </div>
 
