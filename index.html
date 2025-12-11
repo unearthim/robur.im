@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -8,9 +9,10 @@
     <!-- === 1. Primary Meta Tags === -->
     <title>ROBUR.IM • Core Strength</title>
     <meta name="title" content="ROBUR.IM • Core Strength">
-    <meta name="description" content="An interactive digital monument exploring strength as foundation. Reveal layers to discover the robur—the heartwood core that makes sovereignty possible.">
+    <meta name="description"
+        content="An interactive digital monument exploring strength as foundation. Reveal layers to discover the robur—the heartwood core that makes sovereignty possible.">
     <meta name="keywords" content="robur, core strength, digital sovereignty, interactive art, heartwood, foundation">
-    <meta name="author" content="robur.im (An unearth.im Project)">
+    <meta name="author" content="robur.im (by unearth heritage foundry - archive & anvil - unearth.im)">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
 
@@ -50,7 +52,8 @@
         {
           "@type": "Organization",
           "@id": "https://unearth.im/#organization",
-          "name": "unearth.im",
+          "name": "Unearth Heritage Foundry",
+"alternateName": ["Unearth Foundry","Archive & Anvil","Unearth Anvil","Unearth Works","Cultural Infrastructure Foundry"],
           "url": "https://unearth.im/",
           "logo": {
             "@type": "ImageObject",
@@ -86,7 +89,8 @@
 
     <!-- === 3. Open Graph / Facebook === -->
     <meta property="og:title" content="ROBUR.IM • Core Strength">
-    <meta property="og:description" content="An interactive digital monument exploring strength as foundation. Reveal layers to discover the robur—the heartwood core that makes sovereignty possible.">
+    <meta property="og:description"
+        content="An interactive digital monument exploring strength as foundation. Reveal layers to discover the robur—the heartwood core that makes sovereignty possible.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://robur.im/">
     <meta property="og:image" content="https://robur.im/og-image.png">
@@ -96,7 +100,8 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://robur.im/">
     <meta property="twitter:title" content="ROBUR.IM • Core Strength">
-    <meta property="twitter:description" content="An interactive digital monument exploring strength as foundation. Reveal layers to discover the robur—the heartwood core that makes sovereignty possible.">
+    <meta property="twitter:description"
+        content="An interactive digital monument exploring strength as foundation. Reveal layers to discover the robur—the heartwood core that makes sovereignty possible.">
     <meta property="twitter:image" content="https://robur.im/og-image.png">
 
     <!-- === 5. Favicons === -->
@@ -110,61 +115,58 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             overflow: hidden;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
-        
+
         .layer-ring {
             position: absolute;
             border-radius: 50%;
             transition: all 0.7s ease-out;
         }
-        
+
         .modal-content::-webkit-scrollbar {
             width: 8px;
         }
-        
+
         .modal-content::-webkit-scrollbar-track {
             background: #1c1917;
         }
-        
+
         .modal-content::-webkit-scrollbar-thumb {
             background: #78716c;
             border-radius: 4px;
         }
-        
+
         .modal-content::-webkit-scrollbar-thumb:hover {
             background: #a8a29e;
         }
     </style>
 </head>
+
 <body>
-    <div 
-        id="monument-container"
-        class="relative w-full h-screen bg-gradient-to-br from-zinc-900 via-stone-900 to-neutral-900 overflow-hidden cursor-pointer"
-    >
+    <div id="monument-container"
+        class="relative w-full h-screen bg-gradient-to-br from-zinc-900 via-stone-900 to-neutral-900 overflow-hidden cursor-pointer">
         <!-- Layers Container -->
         <div id="layers-container" class="absolute inset-0 flex items-center justify-center pointer-events-none">
             <!-- Layers will be inserted here by JavaScript -->
         </div>
-        
+
         <!-- Core -->
         <div id="core" class="absolute rounded-full transition-all duration-1000 pointer-events-none"></div>
 
         <!-- Title Button -->
-        <button
-            id="titleBtn"
-            class="absolute top-8 left-8 text-amber-200/70 hover:text-amber-100 transition-colors duration-300 text-sm tracking-[0.3em] uppercase font-light z-20"
-        >
+        <button id="titleBtn"
+            class="absolute top-8 left-8 text-amber-200/70 hover:text-amber-100 transition-colors duration-300 text-sm tracking-[0.3em] uppercase font-light z-20">
             robur.im
         </button>
 
@@ -174,53 +176,58 @@
         </div>
 
         <!-- Restart Button -->
-        <button
-            id="restartBtn"
-            class="absolute bottom-8 left-8 text-amber-200/70 hover:text-amber-100 transition-colors duration-300 text-xs tracking-wider uppercase z-20 hidden"
-        >
+        <button id="restartBtn"
+            class="absolute bottom-8 left-8 text-amber-200/70 hover:text-amber-100 transition-colors duration-300 text-xs tracking-wider uppercase z-20 hidden">
             restart
         </button>
 
         <!-- Modal -->
-        <div 
-            id="modal"
-            class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-8"
-        >
-            <div 
-                class="modal-content bg-stone-900 border border-amber-900/30 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
-            >
+        <div id="modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-8">
+            <div
+                class="modal-content bg-stone-900 border border-amber-900/30 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
                 <div class="p-12">
                     <h2 class="text-3xl text-amber-100 mb-8 tracking-wide font-light">
                         Robur
                     </h2>
-                    
+
                     <div class="space-y-4 text-stone-300 leading-relaxed">
                         <p class="italic text-stone-400">
-                            From the Latin for oak, heartwood, and core strength. The part of the tree that bears all weight, accumulated through seasons of patient growth.
+                            From the Latin for oak, heartwood, and core strength. The part of the tree that bears all
+                            weight, accumulated through seasons of patient growth.
                         </p>
-                        
+
                         <p>
-                            This digital monument explores strength not as force, but as foundation. Each layer you reveal moves closer to the core—the robur—that makes sovereignty possible. Like the heartwood of an ancient oak, true strength is built slowly, through time and pressure, becoming the immovable center that supports everything else.
+                            This digital monument explores strength not as force, but as foundation. Each layer you
+                            reveal moves closer to the core—the robur—that makes sovereignty possible. Like the
+                            heartwood of an ancient oak, true strength is built slowly, through time and pressure,
+                            becoming the immovable center that supports everything else.
                         </p>
-                        
+
                         <p>
-                            Interact with the piece to peel back layers and discover what lies beneath. The deeper you go, the closer you come to the essential: the unshakeable ground upon which a sovereign digital life can be built.
+                            Interact with the piece to peel back layers and discover what lies beneath. The deeper you
+                            go, the closer you come to the essential: the unshakeable ground upon which a sovereign
+                            digital life can be built.
                         </p>
                     </div>
 
                     <div class="mt-12 pt-8 border-t border-amber-900/20 text-center">
                         <p class="text-stone-500 text-sm tracking-wider">
                             <small>
-                                a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer" class="text-amber-200/70 hover:text-amber-100 transition-colors">liminal mind meld</a></b> collaboration:<br>
-                                digital monument by <b><a href="https://unearth.im" target="_blank" rel="noopener noreferrer" class="text-amber-200/70 hover:text-amber-100 transition-colors">unearth.im</a></b> | <b><a href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer" class="text-amber-200/70 hover:text-amber-100 transition-colors">archive & anvil</a></b>
+                                a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer"
+                                        class="text-amber-200/70 hover:text-amber-100 transition-colors">liminal mind
+                                        meld</a></b> collaboration:<br>
+                                digital monument by <b><a href="https://unearth.im" target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-amber-200/70 hover:text-amber-100 transition-colors">unearth.im</a></b>
+                                | <b><a href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer"
+                                        class="text-amber-200/70 hover:text-amber-100 transition-colors">archive &
+                                        anvil</a></b>
                             </small>
                         </p>
                     </div>
 
-                    <button
-                        id="closeModalBtn"
-                        class="mt-8 w-full py-3 text-stone-500 hover:text-stone-300 transition-colors text-sm tracking-wider uppercase"
-                    >
+                    <button id="closeModalBtn"
+                        class="mt-8 w-full py-3 text-stone-500 hover:text-stone-300 transition-colors text-sm tracking-wider uppercase">
                         Close
                     </button>
                 </div>
@@ -273,7 +280,7 @@
         // Update layers based on state
         function updateLayers() {
             const isFullyRevealed = revealedLayers >= 5;
-            const coreGlow = isFullyRevealed 
+            const coreGlow = isFullyRevealed
                 ? 0.9 + (Math.sin(pulsePhase) * 0.1)
                 : 0.3 + (Math.sin(pulsePhase) * 0.15);
 
@@ -287,7 +294,7 @@
                 const offsetX = (mousePos.x - 0.5) * (30 - i * 5);
                 const offsetY = (mousePos.y - 0.5) * (30 - i * 5);
                 const breathing = Math.sin(pulsePhase + i * 0.3) * 2;
-                
+
                 // Calculate size based on viewport to maintain circular aspect ratio
                 const containerWidth = container.clientWidth;
                 const containerHeight = container.clientHeight;
@@ -308,7 +315,7 @@
             const minDimension = Math.min(containerWidth, containerHeight);
             const coreSizePercent = isFullyRevealed ? 25 : 20;
             const corePixelSize = (minDimension * coreSizePercent) / 100;
-            
+
             core.style.width = `${corePixelSize}px`;
             core.style.height = `${corePixelSize}px`;
             core.style.left = '50%';
@@ -320,7 +327,7 @@
                 rgba(139, 90, 0, ${coreGlow * 0.4}) 70%,
                 transparent 100%)`;
             core.style.opacity = isFullyRevealed ? 1 : Math.min(1, revealedLayers * 0.25 + 0.2);
-            
+
             if (isFullyRevealed) {
                 core.style.boxShadow = `0 0 ${120 * coreGlow}px rgba(218, 165, 32, ${coreGlow * 0.8}), 0 0 ${200 * coreGlow}px rgba(218, 165, 32, ${coreGlow * 0.4})`;
             } else {
@@ -391,7 +398,7 @@
         initLayers();
         updateLayers();
         startPulse();
-        
+
         // Update on resize to maintain circles
         window.addEventListener('resize', updateLayers);
 
@@ -403,4 +410,5 @@
         });
     </script>
 </body>
+
 </html>
